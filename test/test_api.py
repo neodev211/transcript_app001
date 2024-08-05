@@ -23,7 +23,7 @@ class TestYoutubeTranscriptionAPI(unittest.TestCase):
                                  json={"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"})
         self.assertEqual(response.status_code, 200)
         data = response.json()
-        print("data", data)
+        # print("data", data)
         self.assertIn("transcription", data)
         self.assertIsInstance(data["transcription"], str)
         self.assertGreater(len(data["transcription"]), 0)
